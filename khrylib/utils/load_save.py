@@ -2,7 +2,7 @@ import yaml
 import glob
 import pickle
 import os
-
+import pandas as pd
 
 def get_file_path(file_path):
     project_path = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -22,5 +22,5 @@ def load_pickle(file_path):
     file_path = get_file_path(file_path)
     files = glob.glob(file_path, recursive=True)
     assert(len(files) == 1)
-    data = pickle.load(open(files[0], 'rb'))
+    data = pd.read_pickle(open(files[0], 'rb'))
     return data
