@@ -38,8 +38,10 @@ value_pred_coef: 0.5
 entropy_coef: 0.01
 clip_epsilon: 0.2
 max_num_iterations: 1000
-num_episodes_per_iteration: 500
+# This was 500, but it takes too long to dump so changed to 2
+num_episodes_per_iteration: 2
 max_sequence_length: 50
 num_optim_epoch: 4
 mini_batch_size: 256
-save_model_interval: 10
+# This was 10, but for experimentation, set to 1
+save_model_interval: 1
